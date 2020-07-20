@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   Lessons.findAllUsers()
     .then(users => {
-      res.status(200).json(users, ["id", "username"]);
+      res.status(200).json(users);
     })
     .catch(error => {
       res.status(500).json({ message: "unable to retrieve users" });
